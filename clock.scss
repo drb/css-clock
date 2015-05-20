@@ -7,6 +7,15 @@ $clock-face: 	#717274;
 $border: 		2px;
 $middle:		4px;
 $hands: 		2px;
+$seconds-bg: 	#333;
+
+
+@mixin rotate($rot) {
+	transform: 			rotate(#{$rot}deg);
+	-webkit-transform: 	rotate(#{$rot}deg);
+	-ms-transform: 		rotate(#{$rot}deg);
+
+}
 
 body {
 	background-color: $body;
@@ -17,37 +26,35 @@ body {
 	width: 				$dimensions;
 	height: 			$dimensions;
 	border-radius: 		50%;
-
 	border: 			2px solid $body;
 	box-shadow: 		0 0 0 $border $clock-face;
-
 	position: 			relative;
 
 	// zoom: 10;
 
 	&:after {
-		position: absolute;
-		top: ($dimensions / 2) - ($middle / 2);
-		left: ($dimensions / 2) - ($middle / 2);
-		width: $middle;
-		height: $middle;
-		background-color: $body;
-		content: "";
-		border-radius: $middle / 2;
+		position: 			absolute;
+		top: 				($dimensions / 2) - ($middle / 2);
+		left: 				($dimensions / 2) - ($middle / 2);
+		width: 				$middle;
+		height: 			$middle;
+		background-color: 	$body;
+		content: 			"";
+		border-radius: 		$middle / 2;
 	}
 
 	span {
 
 		&.hours,
-		&.minutes {
+		&.minutes,
+		&.seconds {
+			@include 			rotate(180);
 			left: 				($dimensions / 2) - ($hands / 2);
 			display: 			block;
 			position: 			absolute;
 			height: 			100%;
 			width: $hands;
-			transform: 			rotate(180deg);
-			-webkit-transform: 	rotate(180deg); 
-
+			
 			&:after{
 				content: 			"";
 				display: 			block;
@@ -62,26 +69,33 @@ body {
 		}
 
 		&.hours {
-			transform: 			rotate(180deg);
-			-webkit-transform: 	rotate(180deg); 
 			&:after{
 				height: 			30%;
 			}
 		}
 
+		&.seconds {
+			&:after{
+				background-color: 	$seconds-bg;
+				width: 				$hands / 2;
+				top: 				50%;
+				left: 25%;
+			}
+		}
+
+		// stop animations
 		&:not(.na) {
-			-webkit-transition: 0.8s ease-in-out;
-		    -moz-transition: 	0.8s ease-in-out;
-		    -o-transition: 		0.8s ease-in-out;
-		    transition: 		0.8s ease-in-out;
+			-webkit-transition: 0.5s ease-in-out;
+		    -moz-transition: 	0.5s ease-in-out;
+		    -o-transition: 		0.5s ease-in-out;
+		    transition: 		0.5s ease-in-out;
 		}
 
 		// minutes
 		@for $i from 0 through 60 {
 			$rot: 180 + ($i * 6);
 			&.mrot-#{$i} {
-				transform: rotate(#{$rot}deg);
-				-webkit-transform: rotate(#{$rot}deg); 
+				@include rotate($rot);
 			}
 		}
 
@@ -89,8 +103,7 @@ body {
 		@for $i from 1 through 12 {
 			$rot: 180 + ($i * 30);
 			&.hrot-#{$i} {
-				transform: rotate(#{$rot}deg);
-				-webkit-transform: rotate(#{$rot}deg); 
+				@include rotate($rot);
 			}
 		}
 	}
