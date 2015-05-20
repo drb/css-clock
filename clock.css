@@ -1,0 +1,267 @@
+body {
+  background-color: #17181c; }
+
+.clock {
+  background-color: #717274;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #17181c;
+  box-shadow: 0 0 0 2px #717274;
+  position: relative; }
+  .clock:after {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 4px;
+    height: 4px;
+    background-color: #17181c;
+    content: "";
+    border-radius: 2px; }
+  .clock span.hours, .clock span.minutes {
+    left: 14px;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); }
+    .clock span.hours:after, .clock span.minutes:after {
+      content: "";
+      display: block;
+      height: 40%;
+      background-color: #17181c;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 2px;
+      border-radius: 1px; }
+  .clock span.hours {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); }
+    .clock span.hours:after {
+      height: 30%; }
+  .clock span:not(.na) {
+    -webkit-transition: 0.8s ease-in-out;
+    -moz-transition: 0.8s ease-in-out;
+    -o-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out; }
+  .clock span.mrot-0 {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); }
+  .clock span.mrot-1 {
+    transform: rotate(186deg);
+    -webkit-transform: rotate(186deg); }
+  .clock span.mrot-2 {
+    transform: rotate(192deg);
+    -webkit-transform: rotate(192deg); }
+  .clock span.mrot-3 {
+    transform: rotate(198deg);
+    -webkit-transform: rotate(198deg); }
+  .clock span.mrot-4 {
+    transform: rotate(204deg);
+    -webkit-transform: rotate(204deg); }
+  .clock span.mrot-5 {
+    transform: rotate(210deg);
+    -webkit-transform: rotate(210deg); }
+  .clock span.mrot-6 {
+    transform: rotate(216deg);
+    -webkit-transform: rotate(216deg); }
+  .clock span.mrot-7 {
+    transform: rotate(222deg);
+    -webkit-transform: rotate(222deg); }
+  .clock span.mrot-8 {
+    transform: rotate(228deg);
+    -webkit-transform: rotate(228deg); }
+  .clock span.mrot-9 {
+    transform: rotate(234deg);
+    -webkit-transform: rotate(234deg); }
+  .clock span.mrot-10 {
+    transform: rotate(240deg);
+    -webkit-transform: rotate(240deg); }
+  .clock span.mrot-11 {
+    transform: rotate(246deg);
+    -webkit-transform: rotate(246deg); }
+  .clock span.mrot-12 {
+    transform: rotate(252deg);
+    -webkit-transform: rotate(252deg); }
+  .clock span.mrot-13 {
+    transform: rotate(258deg);
+    -webkit-transform: rotate(258deg); }
+  .clock span.mrot-14 {
+    transform: rotate(264deg);
+    -webkit-transform: rotate(264deg); }
+  .clock span.mrot-15 {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg); }
+  .clock span.mrot-16 {
+    transform: rotate(276deg);
+    -webkit-transform: rotate(276deg); }
+  .clock span.mrot-17 {
+    transform: rotate(282deg);
+    -webkit-transform: rotate(282deg); }
+  .clock span.mrot-18 {
+    transform: rotate(288deg);
+    -webkit-transform: rotate(288deg); }
+  .clock span.mrot-19 {
+    transform: rotate(294deg);
+    -webkit-transform: rotate(294deg); }
+  .clock span.mrot-20 {
+    transform: rotate(300deg);
+    -webkit-transform: rotate(300deg); }
+  .clock span.mrot-21 {
+    transform: rotate(306deg);
+    -webkit-transform: rotate(306deg); }
+  .clock span.mrot-22 {
+    transform: rotate(312deg);
+    -webkit-transform: rotate(312deg); }
+  .clock span.mrot-23 {
+    transform: rotate(318deg);
+    -webkit-transform: rotate(318deg); }
+  .clock span.mrot-24 {
+    transform: rotate(324deg);
+    -webkit-transform: rotate(324deg); }
+  .clock span.mrot-25 {
+    transform: rotate(330deg);
+    -webkit-transform: rotate(330deg); }
+  .clock span.mrot-26 {
+    transform: rotate(336deg);
+    -webkit-transform: rotate(336deg); }
+  .clock span.mrot-27 {
+    transform: rotate(342deg);
+    -webkit-transform: rotate(342deg); }
+  .clock span.mrot-28 {
+    transform: rotate(348deg);
+    -webkit-transform: rotate(348deg); }
+  .clock span.mrot-29 {
+    transform: rotate(354deg);
+    -webkit-transform: rotate(354deg); }
+  .clock span.mrot-30 {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); }
+  .clock span.mrot-31 {
+    transform: rotate(366deg);
+    -webkit-transform: rotate(366deg); }
+  .clock span.mrot-32 {
+    transform: rotate(372deg);
+    -webkit-transform: rotate(372deg); }
+  .clock span.mrot-33 {
+    transform: rotate(378deg);
+    -webkit-transform: rotate(378deg); }
+  .clock span.mrot-34 {
+    transform: rotate(384deg);
+    -webkit-transform: rotate(384deg); }
+  .clock span.mrot-35 {
+    transform: rotate(390deg);
+    -webkit-transform: rotate(390deg); }
+  .clock span.mrot-36 {
+    transform: rotate(396deg);
+    -webkit-transform: rotate(396deg); }
+  .clock span.mrot-37 {
+    transform: rotate(402deg);
+    -webkit-transform: rotate(402deg); }
+  .clock span.mrot-38 {
+    transform: rotate(408deg);
+    -webkit-transform: rotate(408deg); }
+  .clock span.mrot-39 {
+    transform: rotate(414deg);
+    -webkit-transform: rotate(414deg); }
+  .clock span.mrot-40 {
+    transform: rotate(420deg);
+    -webkit-transform: rotate(420deg); }
+  .clock span.mrot-41 {
+    transform: rotate(426deg);
+    -webkit-transform: rotate(426deg); }
+  .clock span.mrot-42 {
+    transform: rotate(432deg);
+    -webkit-transform: rotate(432deg); }
+  .clock span.mrot-43 {
+    transform: rotate(438deg);
+    -webkit-transform: rotate(438deg); }
+  .clock span.mrot-44 {
+    transform: rotate(444deg);
+    -webkit-transform: rotate(444deg); }
+  .clock span.mrot-45 {
+    transform: rotate(450deg);
+    -webkit-transform: rotate(450deg); }
+  .clock span.mrot-46 {
+    transform: rotate(456deg);
+    -webkit-transform: rotate(456deg); }
+  .clock span.mrot-47 {
+    transform: rotate(462deg);
+    -webkit-transform: rotate(462deg); }
+  .clock span.mrot-48 {
+    transform: rotate(468deg);
+    -webkit-transform: rotate(468deg); }
+  .clock span.mrot-49 {
+    transform: rotate(474deg);
+    -webkit-transform: rotate(474deg); }
+  .clock span.mrot-50 {
+    transform: rotate(480deg);
+    -webkit-transform: rotate(480deg); }
+  .clock span.mrot-51 {
+    transform: rotate(486deg);
+    -webkit-transform: rotate(486deg); }
+  .clock span.mrot-52 {
+    transform: rotate(492deg);
+    -webkit-transform: rotate(492deg); }
+  .clock span.mrot-53 {
+    transform: rotate(498deg);
+    -webkit-transform: rotate(498deg); }
+  .clock span.mrot-54 {
+    transform: rotate(504deg);
+    -webkit-transform: rotate(504deg); }
+  .clock span.mrot-55 {
+    transform: rotate(510deg);
+    -webkit-transform: rotate(510deg); }
+  .clock span.mrot-56 {
+    transform: rotate(516deg);
+    -webkit-transform: rotate(516deg); }
+  .clock span.mrot-57 {
+    transform: rotate(522deg);
+    -webkit-transform: rotate(522deg); }
+  .clock span.mrot-58 {
+    transform: rotate(528deg);
+    -webkit-transform: rotate(528deg); }
+  .clock span.mrot-59 {
+    transform: rotate(534deg);
+    -webkit-transform: rotate(534deg); }
+  .clock span.mrot-60 {
+    transform: rotate(540deg);
+    -webkit-transform: rotate(540deg); }
+  .clock span.hrot-1 {
+    transform: rotate(210deg);
+    -webkit-transform: rotate(210deg); }
+  .clock span.hrot-2 {
+    transform: rotate(240deg);
+    -webkit-transform: rotate(240deg); }
+  .clock span.hrot-3 {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg); }
+  .clock span.hrot-4 {
+    transform: rotate(300deg);
+    -webkit-transform: rotate(300deg); }
+  .clock span.hrot-5 {
+    transform: rotate(330deg);
+    -webkit-transform: rotate(330deg); }
+  .clock span.hrot-6 {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); }
+  .clock span.hrot-7 {
+    transform: rotate(390deg);
+    -webkit-transform: rotate(390deg); }
+  .clock span.hrot-8 {
+    transform: rotate(420deg);
+    -webkit-transform: rotate(420deg); }
+  .clock span.hrot-9 {
+    transform: rotate(450deg);
+    -webkit-transform: rotate(450deg); }
+  .clock span.hrot-10 {
+    transform: rotate(480deg);
+    -webkit-transform: rotate(480deg); }
+  .clock span.hrot-11 {
+    transform: rotate(510deg);
+    -webkit-transform: rotate(510deg); }
+  .clock span.hrot-12 {
+    transform: rotate(540deg);
+    -webkit-transform: rotate(540deg); }

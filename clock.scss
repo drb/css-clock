@@ -1,0 +1,94 @@
+$body: 			#17181C;
+$dimensions: 	30px;
+$clock-face: 	#717274;
+$border: 		2px;
+$middle:		4px;
+$hands: 		2px;
+
+body {
+	background-color: $body;
+}
+
+.clock {
+	background-color: 	$clock-face;
+	width: 				$dimensions;
+	height: 			$dimensions;
+	border-radius: 		50%;
+
+	border: 			2px solid $body;
+	box-shadow: 		0 0 0 $border $clock-face;
+
+	position: 			relative;
+
+	// zoom: 10;
+
+	&:after {
+		position: absolute;
+		top: ($dimensions / 2) - ($middle / 2);
+		left: ($dimensions / 2) - ($middle / 2);
+		width: $middle;
+		height: $middle;
+		background-color: $body;
+		content: "";
+		border-radius: $middle / 2;
+	}
+
+	span {
+
+		&.hours,
+		&.minutes {
+			left: 				($dimensions / 2) - ($hands / 2);
+			display: 			block;
+			position: 			absolute;
+			height: 			100%;
+			width: $hands;
+			transform: 			rotate(180deg);
+			-webkit-transform: 	rotate(180deg); 
+
+			&:after{
+				content: 			"";
+				display: 			block;
+				height: 			40%;
+				background-color: 	$body;
+				position: 			absolute;
+				top: 				50%;
+				left: 				0%;
+				width: 				$hands;
+				border-radius: 		$hands / 2;
+			}
+		}
+
+		&.hours {
+			transform: 			rotate(180deg);
+			-webkit-transform: 	rotate(180deg); 
+			&:after{
+				height: 			30%;
+			}
+		}
+
+		&:not(.na) {
+			-webkit-transition: 0.8s ease-in-out;
+		    -moz-transition: 	0.8s ease-in-out;
+		    -o-transition: 		0.8s ease-in-out;
+		    transition: 		0.8s ease-in-out;
+		}
+
+		// minutes
+		@for $i from 0 through 60 {
+			$rot: 180 + ($i * 6);
+			&.mrot-#{$i} {
+				transform: rotate(#{$rot}deg);
+				-webkit-transform: rotate(#{$rot}deg); 
+			}
+		}
+
+		// hours
+		@for $i from 1 through 12 {
+			$rot: 180 + ($i * 30);
+			&.hrot-#{$i} {
+				transform: rotate(#{$rot}deg);
+				-webkit-transform: rotate(#{$rot}deg); 
+			}
+		}
+	}
+}
