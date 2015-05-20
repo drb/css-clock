@@ -11,7 +11,8 @@ body {
   border-radius: 50%;
   border: 2px solid #17181c;
   box-shadow: 0 0 0 2px #717274;
-  position: relative; }
+  position: relative;
+  zoom: 5; }
   .clock:after {
     position: absolute;
     top: 13px;
@@ -45,6 +46,7 @@ body {
   .clock span.seconds:after {
     background-color: #333333;
     width: 1px;
+    border-radius: 1px;
     top: 50%;
     left: 25%; }
   .clock span:not(.na) {
@@ -344,3 +346,7 @@ body {
     transform: rotate(540deg);
     -webkit-transform: rotate(540deg);
     -ms-transform: rotate(540deg); }
+  .clock span.mrot-0 {
+    transition: none; }
+  .clock span.hrot-12 {
+    transition: none; }

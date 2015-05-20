@@ -14,7 +14,6 @@ $seconds-bg: 	#333;
 	transform: 			rotate(#{$rot}deg);
 	-webkit-transform: 	rotate(#{$rot}deg);
 	-ms-transform: 		rotate(#{$rot}deg);
-
 }
 
 body {
@@ -30,7 +29,7 @@ body {
 	box-shadow: 		0 0 0 $border $clock-face;
 	position: 			relative;
 
-	// zoom: 10;
+	zoom: 5;
 
 	&:after {
 		position: 			absolute;
@@ -44,6 +43,8 @@ body {
 	}
 
 	span {
+
+		// background-color: #e4e4e4;
 
 		&.hours,
 		&.minutes,
@@ -78,8 +79,9 @@ body {
 			&:after{
 				background-color: 	$seconds-bg;
 				width: 				$hands / 2;
+				border-radius: 		$hands / 2;
 				top: 				50%;
-				left: 25%;
+				left: 				25%;
 			}
 		}
 
@@ -105,6 +107,14 @@ body {
 			&.hrot-#{$i} {
 				@include rotate($rot);
 			}
+		}
+
+		&.mrot-0 {
+			transition: none;
+		}
+
+		&.hrot-12 {
+			transition: none;
 		}
 	}
 }
