@@ -7,6 +7,29 @@ var clock = (function(){
 		interval = setInterval(tock, 200);
 	}
 
+	function setTime (time) {
+
+		var hours = 0,
+			minutes = 0,
+			seconds = 0;
+
+		time = time.split(':');
+
+		if (time.length) {
+			hours = +time[0];
+		}
+
+		if (time.length && time[1]) {
+			minutes = +time[1];
+		}
+
+		if (time.length && time[2]) {
+			seconds = +time[2];
+		}
+
+		update(hours, minutes, seconds);
+	}
+
 	function tock () {
 
 		var time 	= new Date(),
@@ -43,7 +66,6 @@ var clock = (function(){
 	function update (hours, minutes, seconds) {
 
 		var clocks = getClocks(),
-			
 			clock,
 			minuteHand,
 			hourHand;
@@ -70,8 +92,7 @@ var clock = (function(){
 	}
 
 	return {
-		ticktock: start
+		ticktock: start,
+		setTime: setTime
 	};
 })();
-
-clock.ticktock();

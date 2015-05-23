@@ -3,9 +3,25 @@
 <head>
 	<title>clock</title>
 	<link rel="stylesheet" type="text/css" href="./clock.css">
-	<script type="text/javascript" src="./tick-tock.js"></script>
+	<script src="./tick-tock.js"></script>
+	<script>
+	function loaded () {
+		/**
+		 * ticktock()
+		 * Render a clockface that updates every second
+		 *
+		 * clock.ticktock();
+		 */
+		
+		/**
+		 * setTime
+		 * Display only (time is fixed)
+		 */
+		clock.setTime('03:30:45');
+	}
+	</script>
 </head>
-<body>
+<body onload="loaded()">
 	<div class="clock">
 		<span class="hours"></span>
 		<span class="minutes"></span>
