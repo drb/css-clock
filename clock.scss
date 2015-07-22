@@ -1,120 +1,120 @@
 /**
  * SCSS for clock styles
  */
-$body: 			#17181C;
-$dimensions: 	30px;
-$clock-face: 	#717274;
-$border: 		2px;
-$middle:		4px;
-$hands: 		2px;
-$seconds-bg: 	#333;
+$body:          #17181C;
+$dimensions:    30px;
+$clock-face:    #717274;
+$border:        2px;
+$middle:        4px;
+$hands:         2px;
+$seconds-bg:    #333;
 
 
 @mixin rotate($rot) {
-	transform: 			rotate(#{$rot}deg);
-	-webkit-transform: 	rotate(#{$rot}deg);
-	-ms-transform: 		rotate(#{$rot}deg);
+    transform:          rotate(#{$rot}deg);
+    -webkit-transform:  rotate(#{$rot}deg);
+    -ms-transform:      rotate(#{$rot}deg);
 }
 
 body {
-	background-color: $body;
+    background-color: $body;
 }
 
 .clock {
-	background-color: 	$clock-face;
-	width: 				$dimensions;
-	height: 			$dimensions;
-	border-radius: 		50%;
-	border: 			2px solid $body;
-	box-shadow: 		0 0 0 $border $clock-face;
-	position: 			relative;
+    background-color:   $clock-face;
+    width:              $dimensions;
+    height:             $dimensions;
+    border-radius:      50%;
+    border:             2px solid $body;
+    box-shadow:         0 0 0 $border $clock-face;
+    position:           relative;
 
-	// zoom: 5;
+    // zoom: 5;
 
-	&:after {
-		position: 			absolute;
-		top: 				($dimensions / 2) - ($middle / 2);
-		left: 				($dimensions / 2) - ($middle / 2);
-		width: 				$middle;
-		height: 			$middle;
-		background-color: 	$body;
-		content: 			"";
-		border-radius: 		$middle / 2;
-	}
+    &:after {
+        position:           absolute;
+        top:                ($dimensions / 2) - ($middle / 2);
+        left:               ($dimensions / 2) - ($middle / 2);
+        width:              $middle;
+        height:             $middle;
+        background-color:   $body;
+        content:            "";
+        border-radius:      $middle / 2;
+    }
 
-	span {
+    span {
 
-		// background-color: #e4e4e4;
+        // background-color: #e4e4e4;
 
-		&.hours,
-		&.minutes,
-		&.seconds {
-			@include 			rotate(180);
-			left: 				($dimensions / 2) - ($hands / 2);
-			display: 			block;
-			position: 			absolute;
-			height: 			100%;
-			width: $hands;
-			
-			&:after{
-				content: 			"";
-				display: 			block;
-				height: 			40%;
-				background-color: 	$body;
-				position: 			absolute;
-				top: 				50%;
-				left: 				0%;
-				width: 				$hands;
-				border-radius: 		$hands / 2;
-			}
-		}
+        &.hours,
+        &.minutes,
+        &.seconds {
+            @include            rotate(180);
+            left:               ($dimensions / 2) - ($hands / 2);
+            display:            block;
+            position:           absolute;
+            height:             100%;
+            width: $hands;
+            
+            &:after{
+                content:            "";
+                display:            block;
+                height:             40%;
+                background-color:   $body;
+                position:           absolute;
+                top:                50%;
+                left:               0%;
+                width:              $hands;
+                border-radius:      $hands / 2;
+            }
+        }
 
-		&.hours {
-			&:after{
-				height: 			30%;
-			}
-		}
+        &.hours {
+            &:after{
+                height:             30%;
+            }
+        }
 
-		&.seconds {
-			&:after{
-				background-color: 	$seconds-bg;
-				width: 				$hands / 2;
-				border-radius: 		$hands / 2;
-				top: 				50%;
-				left: 				25%;
-			}
-		}
+        &.seconds {
+            &:after{
+                background-color:   $seconds-bg;
+                width:              $hands / 2;
+                border-radius:      $hands / 2;
+                top:                50%;
+                left:               25%;
+            }
+        }
 
-		// stop animations
-		&:not(.na) {
-			-webkit-transition: 0.5s ease-in-out;
-		    -moz-transition: 	0.5s ease-in-out;
-		    -o-transition: 		0.5s ease-in-out;
-		    transition: 		0.5s ease-in-out;
-		}
+        // stop animations
+        &:not(.na) {
+            -webkit-transition: 0.5s ease-in-out;
+            -moz-transition:    0.5s ease-in-out;
+            -o-transition:      0.5s ease-in-out;
+            transition:         0.5s ease-in-out;
+        }
 
-		// minutes
-		@for $i from 0 through 60 {
-			$rot: 180 + ($i * 6);
-			&.mrot-#{$i} {
-				@include rotate($rot);
-			}
-		}
+        // minutes
+        @for $i from 0 through 60 {
+            $rot: 180 + ($i * 6);
+            &.mrot-#{$i} {
+                @include rotate($rot);
+            }
+        }
 
-		// hours
-		@for $i from 1 through 12 {
-			$rot: 180 + ($i * 30);
-			&.hrot-#{$i} {
-				@include rotate($rot);
-			}
-		}
+        // hours
+        @for $i from 1 through 12 {
+            $rot: 180 + ($i * 30);
+            &.hrot-#{$i} {
+                @include rotate($rot);
+            }
+        }
 
-		&.mrot-0 {
-			transition: none;
-		}
+        &.mrot-0 {
+            transition: none;
+        }
 
-		&.hrot-12 {
-			transition: none;
-		}
-	}
+        &.hrot-12 {
+            transition: none;
+        }
+    }
 }
